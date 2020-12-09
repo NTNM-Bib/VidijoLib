@@ -22,7 +22,8 @@
     "postversion": "git push && git push --tags"
   },
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "src/**/*"
   ],
   "author": "INM – Leibniz-Institut für Neue Materialien gGmbH",
   "license": "GPL-3.0",

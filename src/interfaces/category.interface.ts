@@ -1,4 +1,4 @@
-import { Document, Model, PaginateModel } from 'mongoose'
+import { Document, Model } from 'mongoose'
 
 export interface ICategory extends Document {
   title: string
@@ -6,4 +6,4 @@ export interface ICategory extends Document {
   display: boolean // True if displayed on front page
 }
 
-export interface ICategoryModel extends Model<ICategory>, PaginateModel<ICategory> {}
+export type ICategoryModel = Model<ICategory>

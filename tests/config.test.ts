@@ -1,3 +1,12 @@
+// Set environment variables before importing the configuration
+process.env.NODE_ENV = 'development'
+process.env.PORT = '1234'
+process.env.MONGODB_URI = 'mongodb://localhost:27017/vidijo'
+process.env.API_URI = 'mongodb://localhost:27017/vidijo'
+process.env.EXTERNAL_DATA_SERVICE_URI = 'http://external-data.service:3000'
+process.env.VIDIJO_URI = 'https://www.vidijo.org'
+process.env.HELLO_WORLD = 'HelloWorld!'
+
 import DefaultConfig, { DefaultConfigClass } from '../src/default.config'
 
 test('Check NODE_ENV', () => {

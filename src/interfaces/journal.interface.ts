@@ -1,4 +1,4 @@
-import { Document, Model, PaginateModel, Types } from 'mongoose'
+import { Document, Model, Types } from 'mongoose'
 import { ICategory } from './category.interface'
 
 interface IJournalDocument extends Document {
@@ -20,4 +20,4 @@ export interface IJournal extends IJournalDocument {
   incViews(): void
 }
 
-export interface IJournalModel extends Model<IJournal>, PaginateModel<IJournal> {}
+export type IJournalModel = Model<IJournal>

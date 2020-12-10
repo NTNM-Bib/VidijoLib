@@ -1,6 +1,3 @@
-/**
- * Default config for all services
- */
 export declare class DefaultConfigClass {
     NODE_ENV: string;
     PORT: number;

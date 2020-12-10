@@ -1,4 +1,5 @@
-import { Document, Model, Types } from 'mongoose';
+/// <reference types="mongoose-paginate-v2" />
+import { Document, Model, Types, PaginateModel } from 'mongoose';
 import { ICategory } from './category.interface';
 interface IJournalDocument extends Document {
     active: boolean;
@@ -17,5 +18,6 @@ interface IJournalDocument extends Document {
 export interface IJournal extends IJournalDocument {
     incViews(): void;
 }
-export declare type IJournalModel = Model<IJournal>;
+export interface IJournalModel extends Model<IJournal>, PaginateModel<IJournal> {
+}
 export {};

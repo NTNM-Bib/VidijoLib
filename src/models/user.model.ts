@@ -2,6 +2,7 @@ import Mongoose, { HookNextFunction, Schema } from 'mongoose'
 import * as BCrypt from 'bcrypt'
 import Validator from 'validator'
 import MongooseHidden from 'mongoose-hidden'
+import MongoosePaginate from 'mongoose-paginate-v2'
 import { IUser } from '../interfaces/user.interface'
 
 export const userSchema: Schema = new Schema(
@@ -172,5 +173,7 @@ userSchema.plugin(
     },
   }),
 )
+
+userSchema.plugin(MongoosePaginate)
 
 export const User = Mongoose.model<IUser>('User', userSchema)

@@ -1,8 +1,3 @@
-/**
- * TODO: This logger currently outputs messages to the console
- * TODO: Implement a central log aggregator that collects the logs of all services
- * TODO: Use a new Winston transport to send the logs
- */
 declare class Logger {
     private consoleTransport;
     private logger;

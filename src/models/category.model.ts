@@ -1,6 +1,6 @@
 import Mongoose from 'mongoose'
 import { Schema } from 'mongoose'
-import { ICategory } from '../interfaces/category.interface'
+import { ICategory, ICategoryModel } from '../interfaces/category.interface'
 import MongoosePaginate from 'mongoose-paginate-v2'
 
 export const categorySchema: Schema = new Schema({
@@ -24,4 +24,4 @@ export const categorySchema: Schema = new Schema({
 
 categorySchema.plugin(MongoosePaginate)
 
-export const Category = Mongoose.model<ICategory>('Category', categorySchema)
+export const Category = Mongoose.model<ICategory, ICategoryModel>('Category', categorySchema)

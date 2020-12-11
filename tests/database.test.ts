@@ -1,7 +1,7 @@
 import Mongoose from 'mongoose'
 import { IArticle } from '../src/interfaces/article.interface'
 import { IJournal } from '../src/interfaces/journal.interface'
-import { Article, Journal } from '../src/models'
+import { Article, Category, Journal, User } from '../src/models'
 
 function connectToDatabase() {
   return Mongoose.connect('mongodb://localhost:27017/vidijo', {
@@ -83,6 +83,22 @@ test('Try saving a duplicate article', async () => {
   expect(savedArticle).not.toBeNull()
   expect(savedArticle?.title).toEqual('TestArticle')
   expect(savedArticle?.source).toEqual('https://doi.org/10.3390/app9061231')
+
+  await mongoose.connection.close()
+})
+
+test('Get paginated results (articles, categories, journals, users)', async () => {
+  const mongoose = await connectToDatabase()
+
+  const articlesPage = await Article.paginate()
+  const categoriesPage = await Category.paginate()
+  const journalsPage = await Journal.paginate()
+  const usersPage = await User.paginate()
+
+  expect(articlesPage.docs).not.toBeNull()
+  expect(categoriesPage.docs).not.toBeNull()
+  expect(journalsPage.docs).not.toBeNull()
+  expect(usersPage.docs).not.toBeNull()
 
   await mongoose.connection.close()
 })

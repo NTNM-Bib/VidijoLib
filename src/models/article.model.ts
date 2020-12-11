@@ -1,5 +1,5 @@
 import Mongoose, { Schema } from 'mongoose'
-import { IArticle } from '../interfaces/article.interface'
+import { IArticle, IArticleModel } from '../interfaces/article.interface'
 import MongoosePaginate from 'mongoose-paginate-v2'
 
 export const articleSchema: Schema = new Schema(
@@ -67,4 +67,4 @@ articleSchema.pre<IArticle>('validate', async function (next) {
 
 articleSchema.plugin(MongoosePaginate)
 
-export const Article = Mongoose.model<IArticle>('Article', articleSchema)
+export const Article = Mongoose.model<IArticle, IArticleModel>('Article', articleSchema)

@@ -1,5 +1,5 @@
 import Mongoose, { Schema } from 'mongoose'
-import { IJournal } from '../interfaces/journal.interface'
+import { IJournal, IJournalModel } from '../interfaces/journal.interface'
 import MongoosePaginate from 'mongoose-paginate-v2'
 
 export const journalSchema: Schema = new Schema(
@@ -90,4 +90,4 @@ journalSchema.method('incViews', function (this: IJournal) {
 
 journalSchema.plugin(MongoosePaginate)
 
-export const Journal = Mongoose.model<IJournal>('Journal', journalSchema)
+export const Journal = Mongoose.model<IJournal, IJournalModel>('Journal', journalSchema)

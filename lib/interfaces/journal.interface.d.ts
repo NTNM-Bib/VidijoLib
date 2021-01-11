@@ -8,6 +8,7 @@ interface IJournalDocument extends Document {
     eissn: string;
     source: string;
     cover: string;
+    useGeneratedCover: boolean;
     added: Date;
     latestPubdate: Date;
     views: number;

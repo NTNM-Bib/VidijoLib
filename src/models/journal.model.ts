@@ -78,12 +78,6 @@ journalSchema.virtual('identifier').get(function (this: IJournal) {
   return this.issn ? this.issn : this.eissn ? this.eissn : ''
 })
 
-// Set Date when the journal was added
-journalSchema.pre<IJournal>('save', function (next) {
-  this.added = new Date()
-  return next()
-})
-
 // Increment view counter
 journalSchema.method('incViews', function (this: IJournal) {
   this.update({ $inc: { views: 1 } })

@@ -8,6 +8,8 @@ interface IJournalDocument extends Document {
   eissn: string
   source: string
   cover: string
+  coverUrl: string
+  coverDate: Date
   useGeneratedCover: boolean
   added: Date
   latestPubdate: Date

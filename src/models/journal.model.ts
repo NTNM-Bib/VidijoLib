@@ -32,6 +32,14 @@ export const journalSchema: Schema = new Schema(
       default: '',
     },
 
+    coverUrl: {
+      type: String,
+    },
+
+    coverDate: {
+      type: Date,
+    },
+
     useGeneratedCover: {
       type: Boolean,
       default: false,

@@ -1,6 +1,6 @@
 {
   "name": "vidijo-lib",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "description": "A shared library for Vidijo microservices",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
